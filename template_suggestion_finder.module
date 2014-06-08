@@ -15,6 +15,7 @@ function _template_suggestion_finder_suggestions_dump($variables, $hook = 'None 
     $active_suggestions = $variables['theme_hook_suggestions'];
     $active_suggestions = array_reverse($active_suggestions);
     $active_suggestions = implode(' > ', $active_suggestions);
+    $active_suggestions = str_replace('_', '-', $active_suggestions);
     dsm($active_suggestions);
   }
 }
@@ -31,4 +32,12 @@ function template_suggestion_finder_preprocess(&$variables, $hook) {
  */
 function template_suggestion_finder_preprocess_field(&$variables) {
   _template_suggestion_finder_suggestions_dump($variables, 'field');
+}
+
+/**
+ * Implements hook_page_build().
+ */
+function template_suggestion_finder_page_build(&$page) {
+  dsm('Template suggestions enabled. Please note that this will not ' .
+    'display views suggestions');
 }
