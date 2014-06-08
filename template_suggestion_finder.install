@@ -1,0 +1,16 @@
+<?php
+
+/**
+ * Implements hook_install().
+ */
+function template_suggestion_finder_install() {
+  $theme_hook_suggestions = array();
+  variable_set('tsf_theme_hook_suggestions', $theme_hook_suggestions);
+}
+
+/**
+ * Implements hook_uninstall().
+ */
+function template_suggestion_finder_uninstall() {
+  variable_del('tsf_theme_hook_suggestions');
+}

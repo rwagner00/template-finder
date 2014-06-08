@@ -1,0 +1,4 @@
+name = Template Suggestion Finder
+description = Helps a user find all of the various available template suggestions.
+core = 7.x
+dependencies[] = devel
